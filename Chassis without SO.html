@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chassis without SO Dashboard - Documentation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            details {
+                display: block !important;
+            }
+            details summary {
+                display: none;
+            }
+            details[open] > *:not(summary) {
+                display: block !important;
+            }
+            body {
+                font-size: 12px;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        details summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        
+        details[open] .chevron {
+            transform: rotate(180deg);
+        }
+        
+        pre code {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- HEADER -->
+    <header class="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-8 mb-8 shadow-lg">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-sm mb-2 opacity-90">Power BI Dashboard Documentation</div>
+            <h1 class="text-3xl font-bold mb-2">Chassis without SO Dashboard</h1>
+            <p class="text-lg opacity-90">Track chassis inventory without associated sales orders</p>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-6 pb-12">
+        
+        <!-- DASHBOARD PREVIEW -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-gray-600">
+            <details class="group">
+                <summary class="flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-xl">
+                            📸
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800">Dashboard Preview</h2>
+                    </div>
+                    <svg class="chevron w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <div class="rounded-lg border-2 border-gray-300 shadow-lg overflow-hidden bg-gray-50">
+                        <img src="https://empulseglobal1-my.sharepoint.com/:i:/g/personal/saad_faizan_empulseone_com/IQBjUDJpKqT0R6TIpBn12J0aAaptApmuZvpm39k09r368sw?e=DwDeuy&download=1" 
+                             alt="Chassis without SO Dashboard Screenshot" 
+                             class="w-full h-auto block mx-auto"
+                             style="max-width: 100%; pointer-events: none; user-select: none;"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div style="display:none;" class="bg-gray-50 p-8 text-center">
+                            <div class="text-gray-400 text-5xl mb-4">📊</div>
+                            <p class="text-gray-600 mb-2 font-semibold">Dashboard Preview Image</p>
+                            <p class="text-sm text-gray-500">Image is embedded from SharePoint source</p>
+                            <p class="text-xs text-gray-400 mt-2">Note: Image may require authentication to view</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 italic mt-3 text-center">Chassis without SO Dashboard - Sales Order Open Model</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- DATA SOURCE -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-teal-600">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-xl">
+                    📊
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Data Source</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full border border-gray-200">
+                    <thead class="bg-teal-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm font-bold text-gray-700 border-b">Property</th>
+                            <th class="px-6 py-3 text-left text-sm font-bold text-gray-700 border-b">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm font-medium text-gray-700">Model</td>
+                            <td class="px-6 py-4 text-sm text-gray-900 font-mono">Sales Order - Open</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm font-medium text-gray-700">Table Name</td>
+                            <td class="px-6 py-4 text-sm text-gray-900 font-mono">EMP_ChassisWithoutSONumber_Milly</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm font-medium text-gray-700">Source</td>
+                            <td class="px-6 py-4 text-sm text-gray-900 font-mono">dbo.EMP_ChassisWithoutSONumber</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TABLE INFORMATION -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-amber-600">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-xl">
+                    📋
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Table Information</h2>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Table: <span class="font-mono text-amber-700">EMP_ChassisWithoutSONumber_Milly</span></h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Columns (Dimensions) -->
+                <div>
+                    <h4 class="text-md font-bold text-gray-700 mb-4 pb-2 border-b-2 border-amber-200">Columns (Dimensions)</h4>
+                    <div class="space-y-2">
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">ACTARRIVE</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">Date</div>
+                        <div class="bg-blue-50 px-3 py-2 rounded text-sm border border-blue-200">
+                            Date Category <span class="text-xs text-blue-600 font-semibold">(Calculated Column)</span>
+                        </div>
+                        <div class="bg-blue-50 px-3 py-2 rounded text-sm border border-blue-200">
+                            Date Diff <span class="text-xs text-blue-600 font-semibold">(Calculated Column)</span>
+                        </div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">Name</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">ONSITE</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">prodid</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">Prodstatus</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">Salesid</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">site</div>
+                        <div class="bg-gray-50 px-3 py-2 rounded text-sm">VIN</div>
+                    </div>
+                </div>
+
+                <!-- Measures -->
+                <div>
+                    <h4 class="text-md font-bold text-gray-700 mb-4 pb-2 border-b-2 border-amber-200">Measures (Calculated)</h4>
+                    <div class="space-y-2">
+                        <div class="bg-purple-50 px-3 py-2 rounded text-sm border border-purple-200">
+                            EMP_ChassisWithoutSONumber Count <span class="text-xs text-purple-600 font-semibold">(Measure)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date Category Values -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+                <h4 class="text-md font-bold text-gray-700 mb-3">Date Category Values:</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">Less than 60 days</span>
+                    <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium">More than 60 days</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALL FORMULAS -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-purple-600">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-xl">
+                    ƒx
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">All Formulas</h2>
+            </div>
+
+            <!-- Calculated Columns -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                    <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                    Calculated Columns
+                </h3>
+
+                <!-- Date Diff -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-medium text-gray-800 mb-3">1. Date Diff</h4>
+                    <p class="text-sm text-gray-600 mb-3 italic">Calculates the number of days between chassis arrival and current date</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Original Formula (SQL)</div>
+                            <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>datediff(day, [ACTARRIVE], getdate())</code></pre>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">DAX Formula</div>
+                            <pre class="bg-blue-900 text-blue-100 p-4 rounded-lg overflow-x-auto"><code>DATEDIFF([ACTARRIVE], TODAY(), DAY)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date Category -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-medium text-gray-800 mb-3">2. Date Category</h4>
+                    <p class="text-sm text-gray-600 mb-3 italic">Categorizes chassis based on days since arrival</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Original Formula (SQL)</div>
+                            <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>case
+    when [Date Diff] between 0 and 60 then 'Less than 60 days'
+    when [Date Diff] > 60 then 'More than 60 days'
+end</code></pre>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">DAX Formula</div>
+                            <pre class="bg-blue-900 text-blue-100 p-4 rounded-lg overflow-x-auto"><code>IF(
+    [Date Diff] >= 0 && [Date Diff] <= 60,
+    "Less than 60 days",
+    IF([Date Diff] > 60, "More than 60 days")
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measures -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                    <span class="w-3 h-3 bg-purple-500 rounded-full"></span>
+                    Measures
+                </h3>
+
+                <!-- EMP_ChassisWithoutSONumber Count -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-medium text-gray-800 mb-3">1. EMP_ChassisWithoutSONumber Count</h4>
+                    <p class="text-sm text-gray-600 mb-3 italic">Counts the total number of chassis records without sales orders</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">Original Formula (SQL)</div>
+                            <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>COUNT(*)</code></pre>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">DAX Formula</div>
+                            <pre class="bg-blue-900 text-blue-100 p-4 rounded-lg overflow-x-auto"><code>COUNTROWS(EMP_ChassisWithoutSONumber_Milly)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLICERS -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-green-600">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-xl">
+                    🎚️
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Slicers (Filters)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Site</div>
+                            <div class="text-xs text-gray-500">Filter by location</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUALIZATIONS -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 border-l-4 border-indigo-600">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-xl">
+                    📈
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Visualizations</h2>
+            </div>
+
+            <!-- Chart 1: Donut Chart -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-t-lg">
+                    <h3 class="text-lg font-semibold">Chart 1: Donut Chart - By Site</h3>
+                </div>
+                <div class="border border-gray-200 rounded-b-lg p-4">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700 w-1/3">Visual Type</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Donut Chart</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Legend</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">site</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Values</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">EMP_ChassisWithoutSONumber Count</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Purpose</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Distribution of chassis without SO by site location</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 2: Column Chart -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-t-lg">
+                    <h3 class="text-lg font-semibold">Chart 2: Column Chart - By Date Category</h3>
+                </div>
+                <div class="border border-gray-200 rounded-b-lg p-4">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700 w-1/3">Visual Type</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Column Chart</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">X-Axis</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">Date Category</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Y-Axis</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">EMP_ChassisWithoutSONumber Count</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Categories</td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Less than 60 days</span>
+                                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">More than 60 days</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Purpose</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Compare chassis count by aging category</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 3: Line Chart -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 py-2 rounded-t-lg">
+                    <h3 class="text-lg font-semibold">Chart 3: Line Chart - By Chassis Arrival Date</h3>
+                </div>
+                <div class="border border-gray-200 rounded-b-lg p-4">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700 w-1/3">Visual Type</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Line Chart</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">X-Axis</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">Week Label (e.g., Wk 48 2023)</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Y-Axis</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">EMP_ChassisWithoutSONumber Count</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Purpose</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Trend analysis of chassis arrivals over time by week</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 4: Matrix Table -->
+            <div class="mb-8">
+                <div class="bg-gradient-to-r from-violet-500 to-violet-600 text-white px-4 py-2 rounded-t-lg">
+                    <h3 class="text-lg font-semibold">Chart 4: Matrix Table - Data Table</h3>
+                </div>
+                <div class="border border-gray-200 rounded-b-lg p-4">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700 w-1/3">Visual Type</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Matrix / Table</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Columns</td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Date Category</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Date Diff</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">ONSITE</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">site</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Prodstatus</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Salesid</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">prodid</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Name</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">VIN</span>
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono">Date</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Values</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900 font-mono">EMP_ChassisWithoutSONumber Count</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Filter</td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">ONSITE ≠ 0 (Exclude 0 values)</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-3 text-sm font-semibold text-gray-700">Purpose</td>
+                                    <td class="px-4 py-3 text-sm text-gray-900">Detailed view of all chassis records with key attributes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 bg-orange-50 border-l-4 border-orange-400 p-4 rounded">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-3">⚠️</div>
+                            <div>
+                                <p class="text-sm font-semibold text-orange-800">Important Filter</p>
+                                <p class="text-sm text-orange-700">This table excludes records where ONSITE = 0 to show only chassis currently on site</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK REFERENCE SUMMARY -->
+        <section class="bg-teal-50 border border-teal-200 rounded-lg shadow-md p-6 mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-xl border-2 border-teal-300">
+                    📑
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Quick Reference Summary</h2>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-teal-200 rounded-lg overflow-hidden">
+                    <thead class="bg-teal-600 text-white">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-sm font-bold">#</th>
+                            <th class="px-4 py-3 text-left text-sm font-bold">Visual Type</th>
+                            <th class="px-4 py-3 text-left text-sm font-bold">Name</th>
+                            <th class="px-4 py-3 text-left text-sm font-bold">Filter</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-teal-50">
+                            <td class="px-4 py-3 text-sm font-semibold text-gray-700">1</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Donut Chart</span>
+                            </td>
+                            <td class="px-4 py-3 text-sm font-medium text-gray-900">By Site</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">None</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-teal-50">
+                            <td class="px-4 py-3 text-sm font-semibold text-gray-700">2</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Column Chart</span>
+                            </td>
+                            <td class="px-4 py-3 text-sm font-medium text-gray-900">By Date Category</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">None</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-teal-50">
+                            <td class="px-4 py-3 text-sm font-semibold text-gray-700">3</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-medium">Line Chart</span>
+                            </td>
+                            <td class="px-4 py-3 text-sm font-medium text-gray-900">By Chassis Arrival Date</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">None</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-teal-50">
+                            <td class="px-4 py-3 text-sm font-semibold text-gray-700">4</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-3 py-1 bg-violet-100 text-violet-800 rounded-full text-xs font-medium">Matrix Table</span>
+                            </td>
+                            <td class="px-4 py-3 text-sm font-medium text-gray-900">Data Table</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">ONSITE ≠ 0</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary Statistics -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white border border-teal-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-teal-600">4</div>
+                    <div class="text-sm text-gray-600 mt-1">Total Visualizations</div>
+                </div>
+                <div class="bg-white border border-teal-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-teal-600">1</div>
+                    <div class="text-sm text-gray-600 mt-1">Slicer (Site)</div>
+                </div>
+                <div class="bg-white border border-teal-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-teal-600">2</div>
+                    <div class="text-sm text-gray-600 mt-1">Calculated Columns</div>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="mt-6 bg-white border border-teal-200 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Key Insights</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-teal-500 mr-2">•</span>
+                        <span>This dashboard tracks chassis inventory that has not been assigned to sales orders</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-teal-500 mr-2">•</span>
+                        <span>Aging analysis shows chassis categorized as less than or more than 60 days on site</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-teal-500 mr-2">•</span>
+                        <span>Weekly trend analysis helps identify patterns in chassis arrivals</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-teal-500 mr-2">•</span>
+                        <span>Site-based filtering enables location-specific analysis</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-teal-500 mr-2">•</span>
+                        <span>Detailed matrix table provides comprehensive view of all chassis attributes</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-6 mt-12 no-print">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="font-semibold text-lg">Chassis without SO Dashboard</h3>
+                    <p class="text-gray-400 text-sm">Power BI Dashboard Documentation</p>
+                </div>
+                <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

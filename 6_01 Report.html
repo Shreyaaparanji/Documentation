@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6:01 Report - Power BI Dashboard Documentation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            details { display: block !important; }
+            details[open] summary { display: block !important; }
+            details > *:not(summary) { display: block !important; }
+            body { font-size: 12px; }
+            .print-expand { display: block !important; max-height: none !important; }
+        }
+        
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        
+        details[open] .chevron-icon {
+            transform: rotate(180deg);
+        }
+        
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        pre code {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .dashboard-image-container {
+            max-height: 600px;
+            overflow: hidden;
+        }
+        
+        .dashboard-image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-8 shadow-lg">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="text-blue-200 text-sm mb-2">Power BI Dashboard Documentation</p>
+            <h1 class="text-3xl font-bold mb-2">6:01 Report</h1>
+            <p class="text-blue-100 text-lg">Bailment Pool Forecast Tracker - Invoice & RAF Performance Dashboard</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+        
+        <!-- Dashboard Preview Section -->
+        <section class="bg-white rounded-lg shadow-md overflow-hidden">
+            <details class="group">
+                <summary class="p-6 cursor-pointer border-l-4 border-gray-600 hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center text-white text-lg">🖼️</span>
+                            <h2 class="text-xl font-semibold text-gray-800">Dashboard Preview</h2>
+                        </div>
+                        <svg class="chevron-icon w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </summary>
+                <div class="px-6 pb-6">
+                    <div class="dashboard-image-container border border-gray-300 rounded-lg shadow-inner bg-gray-50 p-2">
+                        <img src="https://empulseglobal1-my.sharepoint.com/:i:/g/personal/saad_faizan_empulseone_com/IQBSUTkCcc21T6bA8hDDyDPWAamq4zWYvj15dLa__Fyo8X0?e=o2x77D&download=1" 
+                             alt="6:01 Report Dashboard Preview" 
+                             class="rounded-md"
+                             onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-64 text-gray-500\'><svg class=\'w-16 h-16 mb-4\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\'></path></svg><p class=\'font-medium\'>Dashboard Image</p><p class=\'text-sm\'>6:01 Report - Bailment Pool Forecast Tracker</p><a href=\'https://empulseglobal1-my.sharepoint.com/:i:/g/personal/saad_faizan_empulseone_com/IQBSUTkCcc21T6bA8hDDyDPWAamq4zWYvj15dLa__Fyo8X0?e=o2x77D\' target=\'_blank\' class=\'mt-3 text-blue-600 hover:underline text-sm\'>View on SharePoint →</a></div>'">
+                    </div>
+                    <p class="text-gray-500 text-sm italic mt-3 text-center">Figure 1: 6:01 Report Dashboard - Bailment Pool Forecast Tracker Overview</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- Data Source Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg">📊</span>
+                <h2 class="text-xl font-semibold text-gray-800">Data Source</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-blue-50">
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-700">Property</th>
+                            <th class="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-700">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3 font-medium text-gray-600">Source</td>
+                            <td class="border border-gray-200 px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">Excel.Total Fouts</code></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3 font-medium text-gray-600">Model</td>
+                            <td class="border border-gray-200 px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">Bailment Pool Forecast Tracker</code></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3 font-medium text-gray-600">Primary Table</td>
+                            <td class="border border-gray-200 px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm">Total Fouts</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Table Information Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 border-l-4 border-amber-600">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white text-lg">📋</span>
+                <h2 class="text-xl font-semibold text-gray-800">Table Information</h2>
+            </div>
+            
+            <div class="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+                <span class="font-semibold text-amber-800">Table Name:</span>
+                <code class="ml-2 bg-amber-100 px-2 py-1 rounded font-mono text-sm">Total Fouts</code>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Columns (Dimensions) -->
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
+                        Columns (Dimensions)
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">BU</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Site</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Invoice & RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Invoice amount</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">No of Units Invoiced</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">No of Units RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RAF Hours</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CP-PTO Install- RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CP-PTO Install- RAF Hours</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Other Units - RAF Hours</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Other Units RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">QRT- RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">QRT- RAF Hours</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Shop Order- RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Shop Order- RAF Hours</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Shop Warranty- RAF</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Shop Warranty- RAF Hours</span>
+                    </div>
+                </div>
+                
+                <!-- Business Units -->
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                        Business Units (BU Values)
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Fire</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">VAN</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">STC</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">FCV</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Others</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slicers Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-600">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white text-lg">🎚️</span>
+                <h2 class="text-xl font-semibold text-gray-800">Slicers (Filters)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Site</p>
+                        <p class="text-sm text-gray-500">Filter by location</p>
+                    </div>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Business Unit</p>
+                        <p class="text-sm text-gray-500">Filter by BU</p>
+                    </div>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Invoice & RAF Date</p>
+                        <p class="text-sm text-gray-500">Filter by date range</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualizations Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 border-l-4 border-indigo-600">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white text-lg">📈</span>
+                <h2 class="text-xl font-semibold text-gray-800">Visualizations</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Chart 1: Units RAF -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-orange-500 text-white px-4 py-2 font-semibold flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                        </svg>
+                        Chart 1: Units RAF (Column Chart)
+                    </div>
+                    <div class="p-4">
+                        <table class="w-full text-sm">
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600 w-32">X-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">Invoice & RAF Date</code></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600">Y-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">No of Units RAF</code></td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-medium text-gray-600">Purpose</td>
+                                <td class="py-2 text-gray-700">Displays the number of RAF units over time by date</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Units Invoiced -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-orange-500 text-white px-4 py-2 font-semibold flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                        </svg>
+                        Chart 2: Units Invoiced (Column Chart)
+                    </div>
+                    <div class="p-4">
+                        <table class="w-full text-sm">
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600 w-32">X-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">Invoice & RAF Date</code></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600">Y-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">No of Units Invoiced</code></td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-medium text-gray-600">Purpose</td>
+                                <td class="py-2 text-gray-700">Tracks the number of invoiced units over time by date</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Invoice Amount -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-orange-500 text-white px-4 py-2 font-semibold flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                        </svg>
+                        Chart 3: Invoice Amount (Column Chart)
+                    </div>
+                    <div class="p-4">
+                        <table class="w-full text-sm">
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600 w-32">X-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">Invoice & RAF Date</code></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600">Y-Axis</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">Invoice Amount</code></td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-medium text-gray-600">Purpose</td>
+                                <td class="py-2 text-gray-700">Shows total invoice amounts over time for financial tracking</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Chart 4: Matrix Table -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-teal-600 text-white px-4 py-2 font-semibold flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"/>
+                        </svg>
+                        Chart 4: Data Table (Matrix)
+                    </div>
+                    <div class="p-4">
+                        <table class="w-full text-sm">
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600 w-32">Rows</td>
+                                <td class="py-2"><code class="bg-gray-100 px-2 py-1 rounded">Invoice & RAF Date</code></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600">Columns</td>
+                                <td class="py-2">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="bg-red-100 text-red-800 px-2 py-0.5 rounded text-xs font-medium">Fire</span>
+                                        <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs font-medium">VAN</span>
+                                        <span class="bg-purple-100 text-purple-800 px-2 py-0.5 rounded text-xs font-medium">STC</span>
+                                        <span class="bg-orange-100 text-orange-800 px-2 py-0.5 rounded text-xs font-medium">FCV</span>
+                                        <span class="bg-gray-200 text-gray-800 px-2 py-0.5 rounded text-xs font-medium">Others</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2 font-medium text-gray-600">Values</td>
+                                <td class="py-2">
+                                    <div class="flex flex-wrap gap-1">
+                                        <code class="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs">Invoice Amount</code>
+                                        <code class="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs">No of Units RAF</code>
+                                        <code class="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs">No of Units Invoiced</code>
+                                        <code class="bg-green-100 text-green-800 px-2 py-0.5 rounded text-xs">RAF Hours</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-medium text-gray-600">Purpose</td>
+                                <td class="py-2 text-gray-700">Cross-tabulation of key metrics by date and business unit for detailed analysis</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference Summary -->
+        <section class="bg-teal-50 border border-teal-200 rounded-lg p-6">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white text-lg">📑</span>
+                <h2 class="text-xl font-semibold text-gray-800">Quick Reference Summary</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-lg overflow-hidden">
+                    <thead>
+                        <tr class="bg-teal-600 text-white">
+                            <th class="px-4 py-3 text-left font-semibold">#</th>
+                            <th class="px-4 py-3 text-left font-semibold">Visual Type</th>
+                            <th class="px-4 py-3 text-left font-semibold">Name</th>
+                            <th class="px-4 py-3 text-left font-semibold">Key Metrics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-medium">1</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">Column Chart</span>
+                            </td>
+                            <td class="px-4 py-3">Units RAF</td>
+                            <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-0.5 rounded text-sm">No of Units RAF by Date</code></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50 bg-gray-50">
+                            <td class="px-4 py-3 font-medium">2</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">Column Chart</span>
+                            </td>
+                            <td class="px-4 py-3">Units Invoiced</td>
+                            <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-0.5 rounded text-sm">No of Units Invoiced by Date</code></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-medium">3</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">Column Chart</span>
+                            </td>
+                            <td class="px-4 py-3">Invoice Amount</td>
+                            <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-0.5 rounded text-sm">Invoice Amount by Date</code></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 bg-gray-50">
+                            <td class="px-4 py-3 font-medium">4</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded text-sm">Matrix Table</span>
+                            </td>
+                            <td class="px-4 py-3">Data Table</td>
+                            <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-0.5 rounded text-sm">Multi-metric by Date × BU</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary Statistics -->
+            <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white rounded-lg p-4 text-center border border-teal-200">
+                    <p class="text-3xl font-bold text-teal-600">4</p>
+                    <p class="text-sm text-gray-600">Visualizations</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 text-center border border-teal-200">
+                    <p class="text-3xl font-bold text-green-600">3</p>
+                    <p class="text-sm text-gray-600">Slicers</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 text-center border border-teal-200">
+                    <p class="text-3xl font-bold text-blue-600">17</p>
+                    <p class="text-sm text-gray-600">Columns</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 text-center border border-teal-200">
+                    <p class="text-3xl font-bold text-purple-600">5</p>
+                    <p class="text-sm text-gray-600">Business Units</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Summary -->
+        <section class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg">📝</span>
+                <h2 class="text-xl font-semibold text-gray-800">Dashboard Summary</h2>
+            </div>
+            
+            <div class="prose max-w-none text-gray-700 space-y-4">
+                <p>
+                    The <strong>6:01 Report</strong> dashboard serves as a comprehensive <strong>Bailment Pool Forecast Tracker</strong> designed to monitor and analyze invoice and RAF (Ready for Final) performance metrics across multiple business units.
+                </p>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                    <h4 class="font-semibold text-blue-800 mb-2">Key Features:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-blue-900">
+                        <li><strong>Time-based Analysis:</strong> All charts use Invoice & RAF Date for temporal tracking</li>
+                        <li><strong>Multi-dimensional Filtering:</strong> Three slicers enable filtering by Site, Business Unit, and Date</li>
+                        <li><strong>Business Unit Breakdown:</strong> Matrix table provides cross-sectional analysis across Fire, VAN, STC, FCV, and Others</li>
+                        <li><strong>Comprehensive Metrics:</strong> Tracks units, hours, and invoice amounts across various RAF categories</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                    <h4 class="font-semibold text-green-800 mb-2">Primary Use Cases:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-green-900">
+                        <li>Monitoring daily/weekly RAF unit completion rates</li>
+                        <li>Tracking invoice amounts and billing performance</li>
+                        <li>Comparing performance across different business units</li>
+                        <li>Analyzing RAF hours allocation across service categories</li>
+                    </ul>
+                </div>
+                
+                <p class="text-sm text-gray-500 italic mt-4">
+                    This dashboard pulls data from the Excel.Total Fouts source and is built on the Bailment Pool Forecast Tracker model, providing real-time insights for operational and financial decision-making.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8 no-print">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-semibold">6:01 Report - Dashboard Documentation</p>
+                <p class="text-gray-400 text-sm">Bailment Pool Forecast Tracker</p>
+            </div>
+            <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                Print / Save PDF
+            </button>
+        </div>
+    </footer>
+
+</body>
+</html>
